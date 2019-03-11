@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: prod
+  application:
+    name: sb-cloud-consul-demo
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        enabled: true
+        instance-id: ${spring.application.name}:${random.value}
+      config:
+        enabled: true
